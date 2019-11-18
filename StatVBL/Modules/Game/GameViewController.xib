@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="StatVBL" customModuleProvider="target">
+            <connections>
+                <outlet property="bundleButton" destination="ild-X0-f7n" id="WaR-eM-c18"/>
+                <outlet property="bundleButtonBottomConstraint" destination="NyW-0V-GlT" id="pcM-fy-htz"/>
+                <outlet property="bundleTalbeView" destination="ZrI-47-a4i" id="jx9-jR-cI3"/>
+                <outlet property="defenseAction" destination="dq8-tm-LEI" id="c0i-Tb-8vQ"/>
+                <outlet property="homeTeamTableView" destination="M3f-hY-Je2" id="N7U-aS-s4A"/>
+                <outlet property="offenseAction" destination="MXh-nq-gh1" id="U2v-HP-XMK"/>
+                <outlet property="pointsAction" destination="aCi-x8-huA" id="v0m-z0-mFF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M3f-hY-Je2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="488"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ild-X0-f7n">
+                    <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="fKb-Ga-y4z"/>
+                    </constraints>
+                    <state key="normal" title="Скамейка">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="bundleButtonTapped:" destination="-1" eventType="touchUpInside" id="LUV-s9-4Xv"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZrI-47-a4i">
+                    <rect key="frame" x="0.0" y="568" width="320" height="320"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="320" id="NOD-oN-hkh"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="xwG-0F-UTV"/>
+                        <outlet property="delegate" destination="-1" id="cR3-8Y-S40"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCi-x8-huA" customClass="RadialMenu" customModule="StatVBL" customModuleProvider="target">
+                    <rect key="frame" x="250" y="438" width="60" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="mtj-Ni-daP"/>
+                        <constraint firstAttribute="height" constant="60" id="r6z-2i-Ta6"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-nq-gh1" customClass="RadialMenu" customModule="StatVBL" customModuleProvider="target">
+                    <rect key="frame" x="250" y="368" width="60" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="ZJ2-z3-3Jn"/>
+                        <constraint firstAttribute="height" constant="60" id="fX3-BE-bDH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-tm-LEI" customClass="RadialMenu" customModule="StatVBL" customModuleProvider="target">
+                    <rect key="frame" x="180" y="438" width="60" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="31S-Kt-Zt6"/>
+                        <constraint firstAttribute="height" constant="60" id="IOh-Yb-eEh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aCi-x8-huA" firstAttribute="top" secondItem="MXh-nq-gh1" secondAttribute="bottom" constant="10" id="19r-Je-0yD"/>
+                <constraint firstItem="ZrI-47-a4i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Oi-gT-x7a"/>
+                <constraint firstItem="aCi-x8-huA" firstAttribute="bottom" secondItem="dq8-tm-LEI" secondAttribute="bottom" id="D1I-Yb-Ga0"/>
+                <constraint firstItem="ild-X0-f7n" firstAttribute="width" secondItem="M3f-hY-Je2" secondAttribute="width" id="FJ6-mS-vzu"/>
+                <constraint firstItem="M3f-hY-Je2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GHf-sm-Ujr"/>
+                <constraint firstItem="ZrI-47-a4i" firstAttribute="top" secondItem="ild-X0-f7n" secondAttribute="bottom" id="Nvf-cr-akq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ild-X0-f7n" secondAttribute="bottom" id="NyW-0V-GlT"/>
+                <constraint firstItem="M3f-hY-Je2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TRs-hl-lQy"/>
+                <constraint firstItem="aCi-x8-huA" firstAttribute="trailing" secondItem="M3f-hY-Je2" secondAttribute="trailing" constant="-10" id="Zr6-ET-0w7"/>
+                <constraint firstAttribute="trailing" secondItem="M3f-hY-Je2" secondAttribute="trailing" id="eY1-lB-YGH"/>
+                <constraint firstItem="ild-X0-f7n" firstAttribute="top" secondItem="aCi-x8-huA" secondAttribute="bottom" constant="10" id="edA-lr-cdp"/>
+                <constraint firstItem="aCi-x8-huA" firstAttribute="trailing" secondItem="MXh-nq-gh1" secondAttribute="trailing" id="kGF-nw-mqM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="M3f-hY-Je2" secondAttribute="bottom" constant="80" id="n6R-ph-NoS"/>
+                <constraint firstAttribute="trailing" secondItem="ZrI-47-a4i" secondAttribute="trailing" id="nSi-6W-a9e"/>
+                <constraint firstItem="ild-X0-f7n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rb6-Tv-1g2"/>
+                <constraint firstItem="aCi-x8-huA" firstAttribute="leading" secondItem="dq8-tm-LEI" secondAttribute="trailing" constant="10" id="tdK-8b-Cd7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.75" y="91.901408450704224"/>
+        </view>
+    </objects>
+</document>
