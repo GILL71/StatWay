@@ -27,6 +27,16 @@ final class TeamViewController: UIViewController, TeamViewDelegate, UITableViewD
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let storage = Storage()
+        let match = storage.getMatches().first
+        let stats = storage.getStats(for: match?.id ?? 0)
+        for stat in stats {
+            stat.printShortStat()
+        }
+    }
+    
     @objc
     func showCreatePlayer() {
         presenter.router.showCreatePlayer()

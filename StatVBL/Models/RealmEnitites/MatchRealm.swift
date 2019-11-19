@@ -11,18 +11,22 @@ import RealmSwift
 final class MatchRealm: Object {
     
     @objc dynamic var id = 0
-    @objc dynamic var number = ""
-    @objc dynamic var freeThrowsMade = 0
+    @objc dynamic var homeTeamPoints = 0
+    @objc dynamic var awayTeamPoints = 0
+    @objc dynamic var homeTeamName = ""
+    @objc dynamic var awayTeamName = ""
+    @objc dynamic var date = ""
+    @objc dynamic var comment: String? = nil
     
-    @objc dynamic var fouls = 0
-    
-    @objc dynamic var plusMinus = 0
-    
-    @objc dynamic var teamId = 0
-    
-    convenience init(player: Match) {
+    convenience init(match: Match) {
         self.init()
-        self.id = player.id
+        self.id = match.id
+        self.homeTeamPoints = match.homeTeamPoints
+        self.awayTeamPoints = match.awayTeamPoints
+        self.homeTeamName = match.homeTeamName
+        self.awayTeamName = match.awayTeamName
+        self.date = match.date
+        self.comment = match.comment
     }
     
     override class func primaryKey() -> String? {

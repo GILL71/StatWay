@@ -11,8 +11,8 @@ import RealmSwift
 final class PlayerStatRealm: Object {
     
     @objc dynamic var id = 0
-    @objc dynamic var playerId = ""
-    @objc dynamic var matchId = ""
+    @objc dynamic var playerId = 0
+    @objc dynamic var matchId = 0
     @objc dynamic var points = 0
     @objc dynamic var games = 0
     @objc dynamic var gamesInStart = 0
@@ -33,6 +33,8 @@ final class PlayerStatRealm: Object {
     convenience init(stat: PlayerStat) {
         self.init()
         self.id = stat.id
+        self.matchId = stat.matchId
+        self.playerId = stat.playerId
         self.points = stat.points
         self.games = stat.games
         self.gamesInStart = stat.gamesInStart

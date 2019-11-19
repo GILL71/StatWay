@@ -22,16 +22,16 @@ final class Match: NSObject {
     
     convenience init(id: Int, hPoints: Int, aPoints: Int, hName: String, aName: String, date: String, comment: String?) throws {
         self.init()
-        if homeTeamPoints == 0 {
+        if hPoints == 0 {
             throw MatchError.NoHomePoints
         }
-        if awayTeamPoints == 0 {
+        if aPoints == 0 {
             throw MatchError.NoAwayPoints
         }
-        if homeTeamName.isEmpty {
+        if hName.isEmpty {
             throw MatchError.NoHomeName
         }
-        if awayTeamName.isEmpty {
+        if aName.isEmpty {
             throw MatchError.NoAwayName
         }
         if date.isEmpty {
@@ -47,7 +47,17 @@ final class Match: NSObject {
         self.awayTeamName = aName
         self.date = date
         self.comment = comment
-        
     }
     
+    convenience init(matchRealm: MatchRealm) {
+        self.init()
+        self.id = matchRealm.id
+        self.homeTeamPoints = matchRealm.homeTeamPoints
+        self.awayTeamPoints = matchRealm.awayTeamPoints
+        self.homeTeamName = matchRealm.homeTeamName
+        self.awayTeamName = matchRealm.awayTeamName
+        self.date = matchRealm.date
+        self.comment = matchRealm.comment
+    }
+
 }

@@ -168,6 +168,20 @@ final class PlayerStat: NSObject {
         self.init()
         self.playerId = playerId
     }
+
+    convenience init(playerStat: PlayerStatRealm) {
+        self.init()
+        self.id = playerStat.id
+        self.matchId = playerStat.matchId
+        self.playerId = playerStat.playerId
+        self.points = playerStat.points
+        self.offenseRebounds = playerStat.offenseRebounds
+        self.defenseRebounds = playerStat.defenseRebounds
+        self.assists = playerStat.assists
+        self.steals = playerStat.steals
+        self.blocks = playerStat.blocks
+        self.turnovers = playerStat.turnovers
+    }
     
     func printShortStat() {
         let playerName = storage.getPlayer(by: playerId)?.fullName

@@ -19,7 +19,7 @@ final class Storage {
 extension Storage {
     
     func save(_ match: Match) {
-        let matchRealm = MatchRealm(player: match)
+        let matchRealm = MatchRealm(match: match)
         try! realm.write {
             realm.add(matchRealm)
         }
@@ -39,6 +39,16 @@ extension Storage {
             return true
         }
         return false
+    }
+    
+    func getMatches() -> [Match] {
+        var matches = [Match]()
+        let matchesRealm = realm.objects(MatchRealm.self)
+        for matchRealm in matchesRealm {
+            let match = Match(matchRealm: matchRealm)
+            matches.append(match)
+        }
+        return matches
     }
     
 }
@@ -133,10 +143,21 @@ extension Storage {
     }
     
     func save(_ stat: PlayerStat) {
+        stat.id = generateStatId()
         let realmStat = PlayerStatRealm(stat: stat)
         try! realm.write {
             realm.add(realmStat)
         }
+    }
+    
+    func getStats(for matchId: Int) -> [PlayerStat] {
+        var playerStats = [PlayerStat]()
+        let playerStatsRealm = realm.objects(PlayerStatRealm.self).filter("matchId == \(matchId)")
+        for statRealm in playerStatsRealm {
+            let stat = PlayerStat(playerStat: statRealm)
+            playerStats.append(stat)
+        }
+        return playerStats
     }
 
 }

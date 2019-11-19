@@ -58,7 +58,7 @@ final class SaveGameViewController: UIViewController {
 extension SaveGameViewController: SaveGameViewDelegate {
     
     func showAlert(title: String, withText: String) {
-        
+        showAlert(title, withText)
     }
     
     func updateView() {
@@ -110,9 +110,9 @@ extension SaveGameViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         switch textField {
-        case awayTeamPointsTextfield:
-            presenter.nameChanged(text)
         case awayTeamNameTextfield:
+            presenter.nameChanged(text)
+        case awayTeamPointsTextfield:
             presenter.pointsChanged(text)
         case commentTextfield:
             presenter.commentChanged(text)

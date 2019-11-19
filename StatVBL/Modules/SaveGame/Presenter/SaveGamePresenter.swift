@@ -28,9 +28,19 @@ final class SaveGamePresenter {
     private var awayTeamPoints = 0
     private var homeTeamName = ""
     private var awayTeamName = ""
-    private var date = ""
     private var comment: String? = nil
+    private var date: String {
+        get {
+            let currentDateTime = Date()
 
+            let formatter = DateFormatter()
+            formatter.timeStyle = .none
+            formatter.dateStyle = .long
+
+            return formatter.string(from: currentDateTime)
+        }
+    }
+    
     private let storage = Storage()
     private weak var saveDelegate: SaveGameDelegate?
     
@@ -47,11 +57,11 @@ final class SaveGamePresenter {
 extension SaveGamePresenter: SaveGamePresenterDelegate {
     
     func pointsChanged(_ text: String) {
-        homeTeamPoints = Int(text) ?? 0
+        awayTeamPoints = Int(text) ?? 0
     }
     
     func nameChanged(_ text: String) {
-        homeTeamName = text
+        awayTeamName = text
     }
     
     func commentChanged(_ text: String) {
@@ -69,7 +79,7 @@ extension SaveGamePresenter: SaveGamePresenterDelegate {
             guard let matchError = error as? MatchError else {
                 return
             }
-            view.showAlert(title: matchError.localizedDescription, withText: "")
+            view.showAlert(title: matchError.rawValue, withText: "")
         }
     }
     
