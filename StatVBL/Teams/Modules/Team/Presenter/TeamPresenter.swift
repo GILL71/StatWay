@@ -45,10 +45,9 @@ final class TeamPresenter: TeamPresenterDelegate {
     
     func config(cell: UITableViewCell, indexPath: IndexPath) {
         let player = self.players[indexPath.row]
+        
         if let cell = cell as? PlayerTableViewCell {
-            cell.numberLabel.text = player.number
-            cell.nameLabel.text = player.name
-            cell.surnameLabel.text = player.surname
+            cell.setup(with: player)
         }
     }
 

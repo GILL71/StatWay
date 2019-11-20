@@ -69,6 +69,14 @@
 		4B746E04236DC3710051DF98 /* BundleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B746E03236DC3710051DF98 /* BundleAdapter.swift */; };
 		4B823FAD236FAA0C000EC6FD /* PlayerStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FAC236FAA0C000EC6FD /* PlayerStat.swift */; };
 		4B823FAF236FAA60000EC6FD /* PlayerStatRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B823FAE236FAA60000EC6FD /* PlayerStatRealm.swift */; };
+		B5053A482385652A0036EF97 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5053A462385652A0036EF97 /* GamesViewController.swift */; };
+		B5053A492385652A0036EF97 /* GamesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5053A472385652A0036EF97 /* GamesViewController.xib */; };
+		B5053A4E238565920036EF97 /* GamesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5053A4D238565920036EF97 /* GamesConfigurator.swift */; };
+		B5053A50238566360036EF97 /* GamesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5053A4F238566360036EF97 /* GamesPresenter.swift */; };
+		B5053A52238566AA0036EF97 /* GamesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5053A51238566AA0036EF97 /* GamesRouter.swift */; };
+		B5053A5423856D890036EF97 /* GamesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5053A5323856D890036EF97 /* GamesAdapter.swift */; };
+		B5297647238589A900460794 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297645238589A900460794 /* GameTableViewCell.swift */; };
+		B5297648238589A900460794 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5297646238589A900460794 /* GameTableViewCell.xib */; };
 		FE1D39406F30A7F2B5269AC5 /* Pods_StatVBL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6BA718ED979ED1E482366F /* Pods_StatVBL.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +147,14 @@
 		4B823FAC236FAA0C000EC6FD /* PlayerStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStat.swift; sourceTree = "<group>"; };
 		4B823FAE236FAA60000EC6FD /* PlayerStatRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatRealm.swift; sourceTree = "<group>"; };
 		A3340AE4D838AC852EE387EC /* Pods-StatVBL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatVBL.release.xcconfig"; path = "Pods/Target Support Files/Pods-StatVBL/Pods-StatVBL.release.xcconfig"; sourceTree = "<group>"; };
+		B5053A462385652A0036EF97 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		B5053A472385652A0036EF97 /* GamesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesViewController.xib; sourceTree = "<group>"; };
+		B5053A4D238565920036EF97 /* GamesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesConfigurator.swift; sourceTree = "<group>"; };
+		B5053A4F238566360036EF97 /* GamesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesPresenter.swift; sourceTree = "<group>"; };
+		B5053A51238566AA0036EF97 /* GamesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRouter.swift; sourceTree = "<group>"; };
+		B5053A5323856D890036EF97 /* GamesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesAdapter.swift; sourceTree = "<group>"; };
+		B5297645238589A900460794 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		B5297646238589A900460794 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		EC87804489AB86BFAC28E4F0 /* Pods-StatVBL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatVBL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StatVBL/Pods-StatVBL.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -380,8 +396,10 @@
 		4B3FB36A22F7575200573DC4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B5E745E4238595A20033A31C /* MatchStat */,
 				4B57F4BB231BCC0F00085116 /* MainTabBar */,
 				1636696521905A2400DFF35B /* Game */,
+				B5053A45238564E40036EF97 /* Games */,
 				4B1343BD237715F900A8A3E6 /* SaveGame */,
 				4B44A68923658BCE007F8AD4 /* Player */,
 				1646BB9E22168D02005A8DF5 /* Team */,
@@ -612,6 +630,68 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B5053A45238564E40036EF97 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				B5053A4C238565790036EF97 /* Configurator */,
+				B5053A4B238565740036EF97 /* Presenter */,
+				B5053A4A2385656C0036EF97 /* Router */,
+				B52976442385895B00460794 /* Views */,
+				B5053A462385652A0036EF97 /* GamesViewController.swift */,
+				B5053A472385652A0036EF97 /* GamesViewController.xib */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		B5053A4A2385656C0036EF97 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B5053A51238566AA0036EF97 /* GamesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B5053A4B238565740036EF97 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B5053A5523856D920036EF97 /* Adapter */,
+				B5053A4F238566360036EF97 /* GamesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B5053A4C238565790036EF97 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				B5053A4D238565920036EF97 /* GamesConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		B5053A5523856D920036EF97 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				B5053A5323856D890036EF97 /* GamesAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		B52976442385895B00460794 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5297645238589A900460794 /* GameTableViewCell.swift */,
+				B5297646238589A900460794 /* GameTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5E745E4238595A20033A31C /* MatchStat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MatchStat;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -681,8 +761,10 @@
 				4B40091D23675F9E003EDD2C /* GameViewController.xib in Resources */,
 				4B44A68D23658BF1007F8AD4 /* CreatePlayerViewController.xib in Resources */,
 				4B1343C12377161E00A8A3E6 /* SaveGameViewController.xib in Resources */,
+				B5053A492385652A0036EF97 /* GamesViewController.xib in Resources */,
 				4B57F4C5231BD06900085116 /* CreateTeamViewController.xib in Resources */,
 				4B57F4C7231BD39800085116 /* GameSetUpViewController.xib in Resources */,
+				B5297648238589A900460794 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,9 +818,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B57F4C1231BCFA800085116 /* UIView.swift in Sources */,
+				B5053A5423856D890036EF97 /* GamesAdapter.swift in Sources */,
 				1636696C2190642A00DFF35B /* GameSetUpConfigurator.swift in Sources */,
 				4B3FB36622F752BE00573DC4 /* PlayerRealm.swift in Sources */,
 				1601D83C21ABF4F10026F32E /* MainTabBarController.swift in Sources */,
+				B5053A482385652A0036EF97 /* GamesViewController.swift in Sources */,
 				165722E52189B1EF008EFC2B /* CreateTeamConfigurator.swift in Sources */,
 				4B3FB36122F7525F00573DC4 /* TeamRealm.swift in Sources */,
 				4B3FB35522F74AAC00573DC4 /* String.swift in Sources */,
@@ -752,6 +836,7 @@
 				4B1343C02377161E00A8A3E6 /* SaveGameViewController.swift in Sources */,
 				4B823FAF236FAA60000EC6FD /* PlayerStatRealm.swift in Sources */,
 				4B44A69623658C84007F8AD4 /* CreatePlayerPresenter.swift in Sources */,
+				B5297647238589A900460794 /* GameTableViewCell.swift in Sources */,
 				4B57F4BA231BCB5700085116 /* TabItem.swift in Sources */,
 				165722CA2188BC4B008EFC2B /* Router.swift in Sources */,
 				4B4009172367542E003EDD2C /* AnimatedBorderView.swift in Sources */,
@@ -760,9 +845,11 @@
 				4B3FB35A22F74B0100573DC4 /* UIViewController.swift in Sources */,
 				4B57F4BF231BCC6900085116 /* MainTabBarScreen.swift in Sources */,
 				1646BBA222168E83005A8DF5 /* TeamPresenter.swift in Sources */,
+				B5053A52238566AA0036EF97 /* GamesRouter.swift in Sources */,
 				4B3FB36422F7529B00573DC4 /* PlayerError.swift in Sources */,
 				165722E72189B1F7008EFC2B /* CreateTeamRouter.swift in Sources */,
 				4B746E04236DC3710051DF98 /* BundleAdapter.swift in Sources */,
+				B5053A50238566360036EF97 /* GamesPresenter.swift in Sources */,
 				4B44A69423658C7B007F8AD4 /* CreatePlayerConfigurator.swift in Sources */,
 				4B40091C23675F9E003EDD2C /* GameViewController.swift in Sources */,
 				4B1343C923771A4000A8A3E6 /* SaveGamePresenter.swift in Sources */,
@@ -774,6 +861,7 @@
 				165722AE2188B324008EFC2B /* AppDelegate.swift in Sources */,
 				4B3FB35C22F74B5200573DC4 /* DateFormatter.swift in Sources */,
 				1646BBA822168EB7005A8DF5 /* TeamRouter.swift in Sources */,
+				B5053A4E238565920036EF97 /* GamesConfigurator.swift in Sources */,
 				1646BBA422168E8B005A8DF5 /* TeamConfigurator.swift in Sources */,
 				1636696A2190641E00DFF35B /* GameSetUpPresenter.swift in Sources */,
 				165722DB21899C0B008EFC2B /* Storage.swift in Sources */,

@@ -29,7 +29,7 @@ private extension MainTabBarScreen {
     }
     
     private func loadTabs() {
-        let tabs: [TabItem] = [.team, .game]
+        let tabs: [TabItem] = [.team, .game, .list]
         viewControllers = tabs.map { tab in
             let vc = tab.controller
             let wrapedVC = UINavigationController(rootViewController: vc)

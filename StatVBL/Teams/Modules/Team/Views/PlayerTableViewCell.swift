@@ -10,8 +10,14 @@ import UIKit
 
 final class PlayerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var surnameLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var numberLabel: UILabel!
+    @IBOutlet private weak var surnameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     
+    func setup(with player: Player) {
+        numberLabel.text = player.number
+        nameLabel.text = player.name
+        surnameLabel.text = player.surname
+    }
+
 }

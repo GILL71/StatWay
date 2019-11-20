@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol GameRouterDelegate: Router {
-    //func showSmthg()
     func showSaveGame()
 }
 

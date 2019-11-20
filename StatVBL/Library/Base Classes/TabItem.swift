@@ -12,6 +12,7 @@ enum TabItem {
     
     case team
     case game
+    case list
     
     var name: String {
         switch self {
@@ -19,6 +20,8 @@ enum TabItem {
             return "Team"
         case .game:
             return "Game"
+        case .list:
+            return "Matches"
         }
     }
     
@@ -28,6 +31,8 @@ enum TabItem {
             return "Team"
         case .game:
             return "Game"
+        case .list:
+            return "List"
         }
     }
     
@@ -44,6 +49,10 @@ enum TabItem {
 //                return UIViewController()
 //            }
             vc.configurator = GameConfigurator()
+            return vc
+        case .list:
+            let vc = GamesViewController()
+            vc.configurator = GamesConfigurator()
             return vc
         }
     }

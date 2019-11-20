@@ -99,9 +99,7 @@ extension StartingFiveAdapter: UITableViewDataSource {
         guard let player = storage.getPlayer(by: startingFiveStat[indexPath.row].playerId) else {
             return UITableViewCell()
         }
-        unwrappedCell.nameLabel.text = player.name
-        unwrappedCell.surnameLabel.text = player.surname
-        unwrappedCell.numberLabel.text = player.number
+        unwrappedCell.setup(with: player)
         return unwrappedCell
     }
     
