@@ -14,6 +14,7 @@ final class StartingFiveAdapter: NSObject {
     private var startingFiveStat: [PlayerStat]
     private var presenter: GamePresenterDelegate
     private let storage = Storage()
+    private let players: [Player]
     
     var indexOfActivePlayer: Int {
         guard let player = activePlayer else {
@@ -29,6 +30,7 @@ final class StartingFiveAdapter: NSObject {
             let stat = PlayerStat(playerId: player.id)
             startingFiveStat.append(stat)
         }
+        self.players = startingFive
     }
     
     func makeSubstitution(with playerFromBundle: PlayerStat) {
@@ -44,6 +46,20 @@ final class StartingFiveAdapter: NSObject {
         startingFiveStat.forEach { [weak self] (stat) in
             stat.matchId = matchId
             self?.storage.save(stat)
+        }
+    }
+    
+}
+
+// MARK: - Helpers
+
+private extension StartingFiveAdapter {
+    
+    func resetStats() {
+        startingFiveStat = [PlayerStat]()
+        for player in players {
+            let stat = PlayerStat(playerId: player.id)
+            startingFiveStat.append(stat)
         }
     }
     

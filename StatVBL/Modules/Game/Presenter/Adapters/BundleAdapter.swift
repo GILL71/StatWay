@@ -14,6 +14,7 @@ final class BundleAdapter: NSObject {
     private var bundleStat: [PlayerStat]
     private var presenter: GamePresenterDelegate
     private let storage = Storage()
+    private let players: [Player]
 
     init(bundleSet: [Player], presenter: GamePresenterDelegate) {
         bundleStat = [PlayerStat]()
@@ -21,6 +22,7 @@ final class BundleAdapter: NSObject {
             let stat = PlayerStat(playerId: player.id)
             bundleStat.append(stat)
         }
+        self.players = bundleSet
         self.presenter = presenter
     }
     
@@ -38,8 +40,23 @@ final class BundleAdapter: NSObject {
             stat.matchId = matchId
             self?.storage.save(stat)
         }
+        resetStats()
     }
 
+}
+
+// MARK: - Helpers
+
+private extension BundleAdapter {
+    
+    func resetStats() {
+        bundleStat = [PlayerStat]()
+        for player in players {
+            let stat = PlayerStat(playerId: player.id)
+            bundleStat.append(stat)
+        }
+    }
+    
 }
 
 // MARK: - UITableViewDelegate
