@@ -1,5 +1,5 @@
 //
-//  GamesAdapter.swift
+//  MatchStatAdapter.swift
 //  StatVBL
 //
 //  Created by Angels It on 20.11.2019.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-final class GamesAdapter: NSObject {
+final class MatchStatAdapter: NSObject {
 
-    var presenter: GamesPresenterDelegate?
+    var presenter: MatchStatPresenterDelegate?
     private let storage = Storage()
-    private let games: [Match]
+    private let players: [Player]
+    private let stats: [PlayerStat]
     
     override init() {
-        games = storage.getMatches()
+        
         super.init()
     }
     
@@ -23,20 +24,20 @@ final class GamesAdapter: NSObject {
 
 // MARK: - Helpers
 
-private extension GamesAdapter {
+private extension MatchStatAdapter {
         
-    func presentStats(with match: Match) {
-        presenter?.router.showStat(for: match)
+    func presentStats(with player: Player) {
+        presenter?.router.showMoreStat(for: player)
     }
     
 }
 
 // MARK: - UITableViewDelegate
 
-extension GamesAdapter: UITableViewDelegate {
+extension MatchStatAdapter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentStats(with: games[indexPath.row])
+        presentStats(with: players[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -47,17 +48,17 @@ extension GamesAdapter: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension GamesAdapter: UITableViewDataSource {
+extension MatchStatAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.nameOfClass, for: indexPath) as? GameTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.nameOfClass, for: indexPath) as? PlayerStatTableViewCell else {
             return UITableViewCell()
         }
-        cell.setup(with: games[indexPath.row])
+//        cell.setup(with: games[indexPath.row])
         return cell
     }
     
