@@ -22,9 +22,9 @@ final class GamesRouter: GamesRouterDelegate {
     }
     
     func showStat(for match: Match) {
-//        let saveVC = SavesGameViewController()
-//        saveVC.configurator = SaveGameConfigurator(saveDelegate: viewController, homeTeamPoints: 15, homeTeamName: "Буран")
-//        viewController.navigationController?.pushViewController(saveVC, animated: true)
+        let statVC = MatchStatViewController()
+        statVC.configurator = MatchStatConfigurator(matchId: match.id)
+        viewController.navigationController?.pushViewController(statVC, animated: true)
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {

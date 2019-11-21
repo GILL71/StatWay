@@ -77,15 +77,18 @@
 		B5053A5423856D890036EF97 /* GamesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5053A5323856D890036EF97 /* GamesAdapter.swift */; };
 		B5297647238589A900460794 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297645238589A900460794 /* GameTableViewCell.swift */; };
 		B5297648238589A900460794 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5297646238589A900460794 /* GameTableViewCell.xib */; };
+		B555C7EC2386CF51006BF099 /* StatInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555C7EA2386CF51006BF099 /* StatInfoCollectionViewCell.swift */; };
+		B555C7ED2386CF51006BF099 /* StatInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B555C7EB2386CF51006BF099 /* StatInfoCollectionViewCell.xib */; };
+		B5C510F62386AF0000A10E74 /* StatsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C510F52386AF0000A10E74 /* StatsAdapter.swift */; };
+		B5C510F82386B80900A10E74 /* StatsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C510F72386B80900A10E74 /* StatsHeaderView.swift */; };
 		B5E745EA2385972F0033A31C /* MatchStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745E82385972F0033A31C /* MatchStatViewController.swift */; };
 		B5E745EB2385972F0033A31C /* MatchStatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E745E92385972F0033A31C /* MatchStatViewController.xib */; };
 		B5E745ED238597D30033A31C /* MatchStatConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745EC238597D30033A31C /* MatchStatConfigurator.swift */; };
 		B5E745EF238597E90033A31C /* MatchStatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745EE238597E90033A31C /* MatchStatPresenter.swift */; };
 		B5E745F1238597F50033A31C /* MatchStatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745F0238597F50033A31C /* MatchStatRouter.swift */; };
-		B5E745F523859A870033A31C /* MatchStatAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745F423859A870033A31C /* MatchStatAdapter.swift */; };
+		B5E745F523859A870033A31C /* PlayersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745F423859A870033A31C /* PlayersAdapter.swift */; };
 		B5E745F823859C190033A31C /* PlayerStatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745F623859C190033A31C /* PlayerStatTableViewCell.swift */; };
 		B5E745F923859C190033A31C /* PlayerStatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E745F723859C190033A31C /* PlayerStatTableViewCell.xib */; };
-		B5E745FF23866A680033A31C /* PlayersStatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745FE23866A680033A31C /* PlayersStatHeaderView.swift */; };
 		FE1D39406F30A7F2B5269AC5 /* Pods_StatVBL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6BA718ED979ED1E482366F /* Pods_StatVBL.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,15 +167,18 @@
 		B5053A5323856D890036EF97 /* GamesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesAdapter.swift; sourceTree = "<group>"; };
 		B5297645238589A900460794 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		B5297646238589A900460794 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		B555C7EA2386CF51006BF099 /* StatInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B555C7EB2386CF51006BF099 /* StatInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		B5C510F52386AF0000A10E74 /* StatsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsAdapter.swift; sourceTree = "<group>"; };
+		B5C510F72386B80900A10E74 /* StatsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHeaderView.swift; sourceTree = "<group>"; };
 		B5E745E82385972F0033A31C /* MatchStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatViewController.swift; sourceTree = "<group>"; };
 		B5E745E92385972F0033A31C /* MatchStatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchStatViewController.xib; sourceTree = "<group>"; };
 		B5E745EC238597D30033A31C /* MatchStatConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatConfigurator.swift; sourceTree = "<group>"; };
 		B5E745EE238597E90033A31C /* MatchStatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatPresenter.swift; sourceTree = "<group>"; };
 		B5E745F0238597F50033A31C /* MatchStatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatRouter.swift; sourceTree = "<group>"; };
-		B5E745F423859A870033A31C /* MatchStatAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatAdapter.swift; sourceTree = "<group>"; };
+		B5E745F423859A870033A31C /* PlayersAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersAdapter.swift; sourceTree = "<group>"; };
 		B5E745F623859C190033A31C /* PlayerStatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatTableViewCell.swift; sourceTree = "<group>"; };
 		B5E745F723859C190033A31C /* PlayerStatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerStatTableViewCell.xib; sourceTree = "<group>"; };
-		B5E745FE23866A680033A31C /* PlayersStatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersStatHeaderView.swift; sourceTree = "<group>"; };
 		EC87804489AB86BFAC28E4F0 /* Pods-StatVBL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatVBL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StatVBL/Pods-StatVBL.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -703,6 +709,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B555C7EE2386CF6C006BF099 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				B5E745F623859C190033A31C /* PlayerStatTableViewCell.swift */,
+				B5E745F723859C190033A31C /* PlayerStatTableViewCell.xib */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		B555C7EF2386CF73006BF099 /* Stat */ = {
+			isa = PBXGroup;
+			children = (
+				B555C7EA2386CF51006BF099 /* StatInfoCollectionViewCell.swift */,
+				B555C7EB2386CF51006BF099 /* StatInfoCollectionViewCell.xib */,
+			);
+			name = Stat;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B5E745E4238595A20033A31C /* MatchStat */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,7 +778,8 @@
 		B5E745F323859A620033A31C /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				B5E745F423859A870033A31C /* MatchStatAdapter.swift */,
+				B5E745F423859A870033A31C /* PlayersAdapter.swift */,
+				B5C510F52386AF0000A10E74 /* StatsAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -761,8 +787,8 @@
 		B5E745FA238667B00033A31C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B5E745F623859C190033A31C /* PlayerStatTableViewCell.swift */,
-				B5E745F723859C190033A31C /* PlayerStatTableViewCell.xib */,
+				B555C7EF2386CF73006BF099 /* Stat */,
+				B555C7EE2386CF6C006BF099 /* Player */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -770,7 +796,7 @@
 		B5E745FB238667BB0033A31C /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				B5E745FE23866A680033A31C /* PlayersStatHeaderView.swift */,
+				B5C510F72386B80900A10E74 /* StatsHeaderView.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -838,6 +864,7 @@
 			files = (
 				B5E745EB2385972F0033A31C /* MatchStatViewController.xib in Resources */,
 				4B44A6A1236604CA007F8AD4 /* PlayerTableViewCell.xib in Resources */,
+				B555C7ED2386CF51006BF099 /* StatInfoCollectionViewCell.xib in Resources */,
 				1646BB9C22168AAE005A8DF5 /* README in Resources */,
 				4B44A6882364A3CA007F8AD4 /* TeamViewController.xib in Resources */,
 				B5E745F923859C190033A31C /* PlayerStatTableViewCell.xib in Resources */,
@@ -917,7 +944,7 @@
 				4B3FB35822F74AE600573DC4 /* CharacterSet.swift in Sources */,
 				165722C42188BB12008EFC2B /* GamePresenter.swift in Sources */,
 				4B823FAD236FAA0C000EC6FD /* PlayerStat.swift in Sources */,
-				B5E745F523859A870033A31C /* MatchStatAdapter.swift in Sources */,
+				B5E745F523859A870033A31C /* PlayersAdapter.swift in Sources */,
 				4B1343CB23771A4B00A8A3E6 /* SaveGameRouter.swift in Sources */,
 				1646BBA022168E7B005A8DF5 /* TeamViewController.swift in Sources */,
 				4B1343C02377161E00A8A3E6 /* SaveGameViewController.swift in Sources */,
@@ -929,7 +956,6 @@
 				B5E745EF238597E90033A31C /* MatchStatPresenter.swift in Sources */,
 				4B4009172367542E003EDD2C /* AnimatedBorderView.swift in Sources */,
 				4B3FB36922F7554300573DC4 /* MatchRealm.swift in Sources */,
-				B5E745FF23866A680033A31C /* PlayersStatHeaderView.swift in Sources */,
 				165722D721898834008EFC2B /* Match.swift in Sources */,
 				4B3FB35A22F74B0100573DC4 /* UIViewController.swift in Sources */,
 				4B57F4BF231BCC6900085116 /* MainTabBarScreen.swift in Sources */,
@@ -943,6 +969,7 @@
 				4B40091C23675F9E003EDD2C /* GameViewController.swift in Sources */,
 				B5E745F1238597F50033A31C /* MatchStatRouter.swift in Sources */,
 				4B1343C923771A4000A8A3E6 /* SaveGamePresenter.swift in Sources */,
+				B5C510F62386AF0000A10E74 /* StatsAdapter.swift in Sources */,
 				4B40091923675440003EDD2C /* RadialMenu.swift in Sources */,
 				165722D22189782A008EFC2B /* Player.swift in Sources */,
 				163669682190641700DFF35B /* GameSetUpViewController.swift in Sources */,
@@ -950,8 +977,10 @@
 				4B44A69223658C6F007F8AD4 /* CreatePlayerRouter.swift in Sources */,
 				165722AE2188B324008EFC2B /* AppDelegate.swift in Sources */,
 				4B3FB35C22F74B5200573DC4 /* DateFormatter.swift in Sources */,
+				B555C7EC2386CF51006BF099 /* StatInfoCollectionViewCell.swift in Sources */,
 				1646BBA822168EB7005A8DF5 /* TeamRouter.swift in Sources */,
 				B5053A4E238565920036EF97 /* GamesConfigurator.swift in Sources */,
+				B5C510F82386B80900A10E74 /* StatsHeaderView.swift in Sources */,
 				1646BBA422168E8B005A8DF5 /* TeamConfigurator.swift in Sources */,
 				B5E745ED238597D30033A31C /* MatchStatConfigurator.swift in Sources */,
 				1636696A2190641E00DFF35B /* GameSetUpPresenter.swift in Sources */,

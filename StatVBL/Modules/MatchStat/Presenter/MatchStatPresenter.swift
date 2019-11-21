@@ -10,27 +10,30 @@ import Foundation
 
 protocol MatchStatPresenterDelegate {
     var router: MatchStatRouterDelegate { get }
-    var adapter: MatchStatAdapter { get }
+    var playersAdapter: PlayersAdapter { get }
+    var statsAdapter: StatsAdapter { get }
     func setupAdapter()
 }
 
 final class MatchStatPresenter: MatchStatPresenterDelegate {
     
     let router: MatchStatRouterDelegate
-    let adapter = MatchStatAdapter()
+    let playersAdapter = PlayersAdapter()
+    let statsAdapter: StatsAdapter
 
     private weak var view: MatchStatViewDelegate!
-    
     private let storage = Storage()
 
     
-    init(view: MatchStatViewDelegate, router: MatchStatRouterDelegate) {
+    init(view: MatchStatViewDelegate, router: MatchStatRouterDelegate, matchId: Int) {
         self.view = view
         self.router = router
+        self.statsAdapter = StatsAdapter(matchId: matchId)
     }
     
     func setupAdapter() {
-        adapter.presenter = self
+        playersAdapter.presenter = self
+        statsAdapter.presenter = self
     }
 
 }

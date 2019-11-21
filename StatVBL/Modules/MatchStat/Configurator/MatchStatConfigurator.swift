@@ -14,15 +14,15 @@ protocol MatchStatConfiguratorDelegate {
 
 final class MatchStatConfigurator: MatchStatConfiguratorDelegate {
     
-//    var settings = NumberOfTeams.One(teamHome: nil, teamAway: nil)
-  
-//    required init(settings: NumberOfTeams) {
-//        self.settings = settings
-//    }
+    let id: Int
+    
+    required init(matchId: Int) {
+        id = matchId
+    }
     
     func config(viewController: MatchStatViewController) {
         let router = MatchStatRouter(viewController: viewController)
-        viewController.presenter = MatchStatPresenter(view: viewController, router: router)
+        viewController.presenter = MatchStatPresenter(view: viewController, router: router, matchId: id)
     }
     
 }
