@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchStatViewController" customModule="StatWay" customModuleProvider="target">
             <connections>
-                <outlet property="playersTableView" destination="JA2-PE-pGl" id="4la-32-zj7"/>
                 <outlet property="statsCollectionView" destination="vUe-v4-ZYC" id="1NG-TA-bpU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,15 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JA2-PE-pGl">
-                    <rect key="frame" x="0.0" y="44" width="120" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="8JD-Kb-lIT"/>
-                    </constraints>
-                </tableView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vUe-v4-ZYC">
-                    <rect key="frame" x="121" y="44" width="293" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g3T-pf-ULh">
                         <size key="itemSize" width="50" height="50"/>
@@ -37,25 +29,12 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asf-ed-PYs">
-                    <rect key="frame" x="120" y="44" width="1" height="818"/>
-                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="1" id="bVZ-HK-6Wr"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUe-v4-ZYC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1yU-64-j9n"/>
-                <constraint firstItem="JA2-PE-pGl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3kK-Dw-1wH"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JA2-PE-pGl" secondAttribute="bottom" id="3o7-RB-cB5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vUe-v4-ZYC" secondAttribute="bottom" id="5lh-hz-srt"/>
-                <constraint firstItem="vUe-v4-ZYC" firstAttribute="leading" secondItem="asf-ed-PYs" secondAttribute="trailing" id="D6x-qQ-OJ5"/>
-                <constraint firstItem="asf-ed-PYs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Gps-G0-nw2"/>
-                <constraint firstItem="asf-ed-PYs" firstAttribute="leading" secondItem="JA2-PE-pGl" secondAttribute="trailing" id="Jge-Kq-lHO"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="asf-ed-PYs" secondAttribute="bottom" id="UDT-DJ-XAb"/>
-                <constraint firstItem="JA2-PE-pGl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fqb-ze-0bL"/>
+                <constraint firstItem="vUe-v4-ZYC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PC7-u1-o42"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vUe-v4-ZYC" secondAttribute="trailing" id="vf8-Ng-cYT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

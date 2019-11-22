@@ -9,20 +9,20 @@
 import UIKit
 
 protocol MatchStatViewDelegate: class {
-    
+    var layout: BeDirectionalLayout? { get set }
 }
 
 final class MatchStatViewController: UIViewController {
     
     // MARK - IBOutlets
     
-    @IBOutlet private weak var playersTableView: UITableView!
     @IBOutlet private weak var statsCollectionView: UICollectionView!
 
     // MARK - Public properties
 
     var presenter: MatchStatPresenterDelegate!
     var configurator: MatchStatConfiguratorDelegate!
+    var layout: BeDirectionalLayout?
     
     // MARK - Lifecycle methods
     
@@ -52,26 +52,18 @@ extension MatchStatViewController {
     }
     
     func setupTableView() {
-        playersTableView.isScrollEnabled = false
-        playersTableView.registerNib(PlayerStatTableViewCell.self)
-        playersTableView.delegate = presenter.playersAdapter
-        playersTableView.dataSource = presenter.playersAdapter
-        playersTableView.separatorStyle = .none
-        
         statsCollectionView.register(UINib(nibName: StatInfoCollectionViewCell.nameOfClass, bundle: nil), forCellWithReuseIdentifier: StatInfoCollectionViewCell.nameOfClass)
         statsCollectionView.delegate = presenter.statsAdapter
         statsCollectionView.dataSource = presenter.statsAdapter
-        
-        statsCollectionView.register(StatsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StatsHeaderView.nameOfClass)
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.headerReferenceSize = CGSize(width: statsCollectionView.frame.width, height: 32)
-        statsCollectionView.collectionViewLayout = flowLayout
-        
+        statsCollectionView.bounces = false
+        let gridLayout = BeDirectionalLayout(delegate: presenter.statsAdapter)
+        layout = gridLayout
+        statsCollectionView.collectionViewLayout = gridLayout
+        statsCollectionView.isDirectionalLockEnabled = true
+        statsCollectionView.showsVerticalScrollIndicator = false
+        statsCollectionView.showsHorizontalScrollIndicator = false
+//        statsCollectionView.isPagingEnabled = true
         presenter.setupAdapter()
-        
-        let footerView = UIView()
-        footerView.backgroundColor = .white
-        playersTableView.tableFooterView = footerView
     }
     
 }

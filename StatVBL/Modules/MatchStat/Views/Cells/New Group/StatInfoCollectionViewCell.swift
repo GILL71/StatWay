@@ -12,8 +12,8 @@ final class StatInfoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var infoLabel: UILabel!
     
-    func setup(with num: Int) {
-        infoLabel.text = "\(num)"
+    func setup(with num: String) {
+        infoLabel.text = num
     }
 
 }

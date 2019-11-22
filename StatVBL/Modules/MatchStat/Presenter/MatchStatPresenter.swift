@@ -10,7 +10,6 @@ import Foundation
 
 protocol MatchStatPresenterDelegate {
     var router: MatchStatRouterDelegate { get }
-    var playersAdapter: PlayersAdapter { get }
     var statsAdapter: StatsAdapter { get }
     func setupAdapter()
 }
@@ -18,7 +17,6 @@ protocol MatchStatPresenterDelegate {
 final class MatchStatPresenter: MatchStatPresenterDelegate {
     
     let router: MatchStatRouterDelegate
-    let playersAdapter = PlayersAdapter()
     let statsAdapter: StatsAdapter
 
     private weak var view: MatchStatViewDelegate!
@@ -32,8 +30,8 @@ final class MatchStatPresenter: MatchStatPresenterDelegate {
     }
     
     func setupAdapter() {
-        playersAdapter.presenter = self
         statsAdapter.presenter = self
+        statsAdapter.beDirectionalLayout = view.layout
     }
 
 }
