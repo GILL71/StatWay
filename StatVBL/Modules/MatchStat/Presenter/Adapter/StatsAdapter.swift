@@ -44,7 +44,7 @@ extension StatsAdapter: UICollectionViewDelegate {
 extension StatsAdapter: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return players.count + 1
+        return players.count + 1 + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +58,72 @@ extension StatsAdapter: UICollectionViewDataSource {
             cell.backgroundColor = .groupTableViewBackground
             return cell
         }
+        if indexPath.section == players.count + 1 && indexPath.row == 0 {
+            cell.setup(with: "Всего")
+            cell.backgroundColor = .white
+            return cell
+        } else if indexPath.section == players.count + 1 {
+            switch indexPath.row {
+            case 1:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.points
+                }
+                cell.setup(with: "\(allPoints)")
+            case 2:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.rebounds
+                }
+                cell.setup(with: "\(allPoints)")
+            case 3:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.threePointsMade
+                }
+                cell.setup(with: "\(allPoints)")
+            case 4:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.freeThrowsMade
+                }
+                cell.setup(with: "\(allPoints)")
+            case 5:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.rebounds
+                }
+                cell.setup(with: "\(allPoints)")
+            case 6:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.assists
+                }
+                cell.setup(with: "\(allPoints)")
+            case 7:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.steals
+                }
+                cell.setup(with: "\(allPoints)")
+            case 8:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.blocks
+                }
+                cell.setup(with: "\(allPoints)")
+            case 9:
+                var allPoints = 0
+                for stat in stats {
+                    allPoints += stat.turnovers
+                }
+                cell.setup(with: "\(allPoints)")
+            default:
+                break
+            }
+            return cell
+        }
+        
         if indexPath.row == 0 {
             if indexPath.section > 0 {
                 cell.setup(with: players[indexPath.section - 1].fullName)
