@@ -15,5 +15,9 @@ final class StatInfoCollectionViewCell: UICollectionViewCell {
     func setup(with num: String) {
         infoLabel.text = num
     }
+    
+    func setup(with value: ViewStatValue) {
+        infoLabel.text = value.rawValue
+    }
 
 }

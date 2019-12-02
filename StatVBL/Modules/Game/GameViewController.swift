@@ -193,13 +193,13 @@ private extension GameViewController {
         pointsAction.layer.cornerRadius = pointsAction.frame.width / 2
         //        menu.backgroundColor = .red
         let onePoint = RadialMenu.ItemSettings(action: { [weak self] in
-            self?.presenter.countSelectedPlayer(stat: .points(num: 1))
+            self?.presenter.countSelectedPlayer(stat: .onePoint)
         }, title: "1")
         let twoPoint = RadialMenu.ItemSettings(action: { [weak self] in
-            self?.presenter.countSelectedPlayer(stat: .points(num: 2))
+            self?.presenter.countSelectedPlayer(stat: .twoPoints)
         }, title: "2")
         let threePoint = RadialMenu.ItemSettings(action: { [weak self] in
-            self?.presenter.countSelectedPlayer(stat: .points(num: 3))
+            self?.presenter.countSelectedPlayer(stat: .threePoints)
         }, title: "3")
         pointsAction.setItems(with: [onePoint, twoPoint, threePoint])
         pointsAction.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
@@ -212,7 +212,7 @@ private extension GameViewController {
         offenseAction.layer.cornerRadius = offenseAction.frame.width / 2
         //        menu.backgroundColor = .red
         let ofRebound = RadialMenu.ItemSettings(action: { [weak self] in
-            self?.presenter.countSelectedPlayer(stat: .ofRebound)
+            self?.presenter.countSelectedPlayer(stat: .offensiveRebound)
         }, title: "R")
         let assist = RadialMenu.ItemSettings(action: { [weak self] in
             self?.presenter.countSelectedPlayer(stat: .assist)
@@ -231,7 +231,7 @@ private extension GameViewController {
         defenseAction.layer.cornerRadius = defenseAction.frame.width / 2
         //        menu.backgroundColor = .red
         let defRebound = RadialMenu.ItemSettings(action: { [weak self] in
-            self?.presenter.countSelectedPlayer(stat: .defRebound)
+            self?.presenter.countSelectedPlayer(stat: .defensiveRebound)
         }, title: "R")
         let steal = RadialMenu.ItemSettings(action: { [weak self] in
             self?.presenter.countSelectedPlayer(stat: .steal)

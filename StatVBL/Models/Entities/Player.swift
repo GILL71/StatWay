@@ -219,39 +219,8 @@ final class Player: NSObject {
         self.name = playerRealm.name
         self.surname = playerRealm.surname
         self.number = playerRealm.number
-//        self.points = playerRealm.points
-//        self.games = playerRealm.games
-//        self.gamesInStart = playerRealm.gamesInStart
-//        self.defenseRebounds = playerRealm.defenseRebounds
-//        self.offenseRebounds = playerRealm.offenseRebounds
-//        self.assists = playerRealm.assists
-//        self.steals = playerRealm.steals
-//        self.blocks = playerRealm.blocks
-//        self.turnovers = playerRealm.turnovers
-//        self.fieldGoalsAttempts = playerRealm.fieldGoalsAttempts
-//        self.fieldGoalsMade = playerRealm.fieldGoalsMade
-//        self.threePointsAttempts = playerRealm.threePointsAttempts
-//        self.threePointsMade = playerRealm.threePointsMade
-//        self.freeThrowsAttempts = playerRealm.freeThrowsAttempts
-//        self.freeThrowsMade = playerRealm.freeThrowsMade
-//        self.fouls = playerRealm.fouls
-//        self.plusMinus = playerRealm.plusMinus
         self.teamId = playerRealm.teamId
     }
-    
-//    func printShortStat() {
-//        let str = """
-//            Очки - \(points)
-//            Подборы(А) - \(offenseRebounds)
-//            Подборы(З) - \(defenseRebounds)
-//            Передачи - \(assists)
-//            Перехваты - \(steals)
-//            Блоки - \(blocks)
-//            Потери - \(turnovers)
-//        """
-//        print(str)
-//    }
-    
     
 }
 

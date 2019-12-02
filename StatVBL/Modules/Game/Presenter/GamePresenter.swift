@@ -8,16 +8,6 @@
 
 import Foundation
 
-enum AddPlayerStat {
-    case points(num: Int)
-    case ofRebound
-    case defRebound
-    case assist
-    case turnover
-    case block
-    case steal
-}
-
 protocol GamePresenterDelegate {
     var router: GameRouterDelegate { get }
     var bundleAdapter: BundleAdapter? { get }
@@ -25,7 +15,7 @@ protocol GamePresenterDelegate {
     var playerFromStartForSubstitution: PlayerStat? { get }
     var playerFromBundleForSubstitution: PlayerStat? { get }
     func setupAdapters()
-    func countSelectedPlayer(stat: AddPlayerStat)
+    func countSelectedPlayer(stat: StatValue)
     func makeSubstitution(of player: PlayerStat)
     func confirmSubstitution(on player: PlayerStat)
     func completeSubstitution()
@@ -77,23 +67,40 @@ final class GamePresenter: GamePresenterDelegate {
         bundleAdapter = BundleAdapter(bundleSet: bundle, presenter: self)
     }
     
-    func countSelectedPlayer(stat: AddPlayerStat) {
+    func countSelectedPlayer(stat: StatValue) {
         if let playerStat = startingFiveAdapter?.activePlayer {
             switch stat {
-            case let .points(num):
-                playerStat.points += num
+            case .onePoint:
+                playerStat.freeThrowsMade += 1
+                playerStat.freeThrowsAttempts += 1
+            case .missedOneP:
+                playerStat.freeThrowsAttempts += 1
+            case .twoPoints:
+                playerStat.twoPointsMade += 1
+                playerStat.twoPointsAttempts += 1
+            case .missedTwoP:
+                playerStat.twoPointsAttempts += 1
+            case .threePoints:
+                playerStat.threePointsMade += 1
+                playerStat.threePointsAttempts += 1
+            case .missedThreeP:
+                playerStat.threePointsAttempts += 1
             case .assist:
                 playerStat.assists += 1
-            case .ofRebound:
+            case .offensiveRebound:
                 playerStat.offenseRebounds += 1
             case .turnover:
                 playerStat.turnovers += 1
             case .block:
                 playerStat.blocks += 1
-            case .defRebound:
+            case .defensiveRebound:
                 playerStat.defenseRebounds += 1
             case .steal:
                 playerStat.steals += 1
+            case .foul:
+                if playerStat.fouls < 5 {
+                    playerStat.fouls += 1
+                }
             }
             view?.deselectStartPlayer(at: IndexPath(row: startingFiveAdapter?.indexOfActivePlayer ?? 0, section: 0))
             startingFiveAdapter?.activePlayer = nil

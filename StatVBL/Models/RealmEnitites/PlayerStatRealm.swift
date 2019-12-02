@@ -22,8 +22,8 @@ final class PlayerStatRealm: Object {
     @objc dynamic var steals = 0
     @objc dynamic var blocks = 0
     @objc dynamic var turnovers = 0
-    @objc dynamic var fieldGoalsAttempts = 0
-    @objc dynamic var fieldGoalsMade = 0
+    @objc dynamic var twoPointsAttempts = 0
+    @objc dynamic var twoPointsMade = 0
     @objc dynamic var threePointsAttempts = 0
     @objc dynamic var threePointsMade = 0
     @objc dynamic var freeThrowsAttempts = 0
@@ -44,8 +44,8 @@ final class PlayerStatRealm: Object {
         self.steals = stat.steals
         self.blocks = stat.blocks
         self.turnovers = stat.turnovers
-        self.fieldGoalsAttempts = stat.fieldGoalsAttempts
-        self.fieldGoalsMade = stat.fieldGoalsMade
+        self.twoPointsAttempts = stat.twoPointsAttempts
+        self.twoPointsMade = stat.twoPointsMade
         self.threePointsAttempts = stat.threePointsAttempts
         self.threePointsMade = stat.threePointsMade
         self.freeThrowsAttempts = stat.freeThrowsAttempts

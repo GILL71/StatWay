@@ -13,7 +13,9 @@ final class PlayerStat: NSObject {
     var id = 0
     var playerId = 0
     var matchId = 0
-    var points = 0
+    var points: Int {
+        return freeThrowsMade + twoPointsMade * 2 + threePointsMade * 3
+    }
     var games = 0
     
     private let storage = Storage()
@@ -100,24 +102,24 @@ final class PlayerStat: NSObject {
         return gamesInStart != 0 ? Double(turnovers / gamesInStart) : 0
     }
     
-    var fieldGoalsAttempts = 0
+    var twoPointsAttempts = 0
     
-    var fieldGoalsAttemptsPerGame: Double {
-        return games != 0 ? Double(fieldGoalsAttempts / games) : 0
+    var twoPointsAttemptsPerGame: Double {
+        return games != 0 ? Double(twoPointsAttempts / games) : 0
     }
     
-    var fieldGoalsAttemptsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(fieldGoalsAttempts / gamesInStart) : 0
+    var twoPointsAttemptsPerGameInStart: Double {
+        return gamesInStart != 0 ? Double(twoPointsAttempts / gamesInStart) : 0
     }
     
-    var fieldGoalsMade = 0
+    var twoPointsMade = 0
     
-    var fieldGoalsMadePerGame: Double {
-        return games != 0 ? Double(fieldGoalsMade / games) : 0
+    var twoPointsMadePerGame: Double {
+        return games != 0 ? Double(twoPointsMade / games) : 0
     }
     
-    var fieldGoalsMadePerGameInStart: Double {
-        return gamesInStart != 0 ? Double(fieldGoalsMade / gamesInStart) : 0
+    var twoPointsMadePerGameInStart: Double {
+        return gamesInStart != 0 ? Double(twoPointsMade / gamesInStart) : 0
     }
     
     var threePointsAttempts = 0
@@ -174,7 +176,6 @@ final class PlayerStat: NSObject {
         self.id = playerStat.id
         self.matchId = playerStat.matchId
         self.playerId = playerStat.playerId
-        self.points = playerStat.points
         self.offenseRebounds = playerStat.offenseRebounds
         self.defenseRebounds = playerStat.defenseRebounds
         self.assists = playerStat.assists
@@ -197,6 +198,39 @@ final class PlayerStat: NSObject {
         """
 //        print(playerName ?? "" + ":" + str)
         print(str)
+    }
+    
+    func getValue(for statValue: ViewStatValue) -> String {
+        switch statValue {
+        case .points:
+            return "\(points)"
+        case .player:
+            return ""
+        case .rebounds:
+            return "\(rebounds)"
+        case .offensiveRebounds:
+            return "\(offenseRebounds)"
+        case .defensiveRebounds:
+            return "\(defenseRebounds)"
+        case .twoPoints:
+            return "\(twoPointsMade)"
+        case .twoPointsAttempts:
+            return "\(twoPointsAttempts)"
+        case .threePoints:
+            return "\(threePointsMade)"
+        case .threePointsAttempts:
+            return "\(threePointsAttempts)"
+        case .assists:
+            return "\(assists)"
+        case .turnovers:
+            return "\(turnovers)"
+        case .blocks:
+            return "\(blocks)"
+        case .steals:
+            return "\(steals)"
+        case .fouls:
+            return "\(fouls)"
+        }
     }
     
 }
