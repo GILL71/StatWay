@@ -10,6 +10,7 @@ import Foundation
 
 protocol GamePresenterDelegate {
     var router: GameRouterDelegate { get }
+    var overAllPoints: Int { get }
     var bundleAdapter: BundleAdapter? { get }
     var startingFiveAdapter: StartingFiveAdapter? { get }
     var playerFromStartForSubstitution: PlayerStat? { get }
@@ -37,6 +38,9 @@ final class GamePresenter: GamePresenterDelegate {
     var startingFiveAdapter: StartingFiveAdapter?
     var playerFromStartForSubstitution: PlayerStat?
     var playerFromBundleForSubstitution: PlayerStat?
+    var overAllPoints: Int {
+        return (bundleAdapter?.overAllPoints ?? 0) + (startingFiveAdapter?.overAllPoints ?? 0)
+    }
 
     private weak var view: GameViewDelegate!
     private var homeTeam = [Player]()

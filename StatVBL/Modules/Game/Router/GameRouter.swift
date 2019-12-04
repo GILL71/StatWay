@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol GameRouterDelegate: Router {
-    func showSaveGame()
+    func showSaveGame(with points: Int)
 }
 
 final class GameRouter: GameRouterDelegate {
@@ -21,9 +21,9 @@ final class GameRouter: GameRouterDelegate {
         self.viewController = viewController
     }
     
-    func showSaveGame() {
+    func showSaveGame(with points: Int) {
         let saveVC = SaveGameViewController()
-        saveVC.configurator = SaveGameConfigurator(saveDelegate: viewController, homeTeamPoints: 15, homeTeamName: "Буран")
+        saveVC.configurator = SaveGameConfigurator(saveDelegate: viewController, homeTeamPoints: points, homeTeamName: "Буран")
         viewController.navigationController?.pushViewController(saveVC, animated: true)
     }
     

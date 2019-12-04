@@ -11,6 +11,13 @@ import UIKit
 final class BundleAdapter: NSObject {
     
     var activePlayer: PlayerStat?
+    var overAllPoints: Int {
+        var points = 0
+        for stat in bundleStat {
+            points += stat.points
+        }
+        return points
+    }
     private var bundleStat: [PlayerStat]
     private var presenter: GamePresenterDelegate
     private let storage = Storage()

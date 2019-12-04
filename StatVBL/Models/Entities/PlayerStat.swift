@@ -176,12 +176,22 @@ final class PlayerStat: NSObject {
         self.id = playerStat.id
         self.matchId = playerStat.matchId
         self.playerId = playerStat.playerId
-        self.offenseRebounds = playerStat.offenseRebounds
+        self.games = playerStat.games
+        self.gamesInStart = playerStat.gamesInStart
         self.defenseRebounds = playerStat.defenseRebounds
+        self.offenseRebounds = playerStat.offenseRebounds
         self.assists = playerStat.assists
         self.steals = playerStat.steals
         self.blocks = playerStat.blocks
         self.turnovers = playerStat.turnovers
+        self.twoPointsAttempts = playerStat.twoPointsAttempts
+        self.twoPointsMade = playerStat.twoPointsMade
+        self.threePointsAttempts = playerStat.threePointsAttempts
+        self.threePointsMade = playerStat.threePointsMade
+        self.freeThrowsAttempts = playerStat.freeThrowsAttempts
+        self.freeThrowsMade = playerStat.freeThrowsMade
+        self.fouls = playerStat.fouls
+        
     }
     
     func printShortStat() {

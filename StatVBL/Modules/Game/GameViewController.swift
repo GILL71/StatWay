@@ -78,7 +78,7 @@ extension GameViewController {
     
     @objc
     func saveGameAction() {
-        presenter.router.showSaveGame()
+        presenter.router.showSaveGame(with: presenter.overAllPoints)
     }
 
 }

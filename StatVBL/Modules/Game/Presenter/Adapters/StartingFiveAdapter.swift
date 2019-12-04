@@ -11,6 +11,13 @@ import UIKit
 final class StartingFiveAdapter: NSObject {
 
     var activePlayer: PlayerStat?
+    var overAllPoints: Int {
+        var points = 0
+        for stat in startingFiveStat {
+            points += stat.points
+        }
+        return points
+    }
     private var startingFiveStat: [PlayerStat]
     private var presenter: GamePresenterDelegate
     private let storage = Storage()
