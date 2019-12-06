@@ -10,6 +10,8 @@ import RealmSwift
 
 final class PlayerRealm: Object {
     
+    // MARK: - Public properties
+
     @objc dynamic var id = 0
     @objc dynamic var number = ""
     @objc dynamic var name = ""
@@ -29,36 +31,18 @@ final class PlayerRealm: Object {
     @objc dynamic var threePointsMade = 0
     @objc dynamic var freeThrowsAttempts = 0
     @objc dynamic var freeThrowsMade = 0
-    
     @objc dynamic var fouls = 0
-    
     @objc dynamic var plusMinus = 0
-    
     @objc dynamic var teamId = 0
     
+    // MARK: - Initializers
+
     convenience init(player: Player) {
         self.init()
         self.id = player.id
         self.name = player.name
         self.surname = player.surname
         self.number = player.number
-//        self.points = player.points
-//        self.games = player.games
-//        self.gamesInStart = player.gamesInStart
-//        self.defenseRebounds = player.defenseRebounds
-//        self.offenseRebounds = player.offenseRebounds
-//        self.assists = player.assists
-//        self.steals = player.steals
-//        self.blocks = player.blocks
-//        self.turnovers = player.turnovers
-//        self.fieldGoalsAttempts = player.fieldGoalsAttempts
-//        self.fieldGoalsMade = player.fieldGoalsMade
-//        self.threePointsAttempts = player.threePointsAttempts
-//        self.threePointsMade = player.threePointsMade
-//        self.freeThrowsAttempts = player.freeThrowsAttempts
-//        self.freeThrowsMade = player.freeThrowsMade
-//        self.fouls = player.fouls
-//        self.plusMinus = player.plusMinus
         self.teamId = player.teamId
     }
     

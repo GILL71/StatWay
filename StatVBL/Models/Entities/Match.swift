@@ -10,6 +10,8 @@ import Foundation
 
 final class Match: NSObject {
     
+    // MARK: - Public properties
+
     var id = 0
     var homeTeamPoints = 0
     var awayTeamPoints = 0
@@ -18,8 +20,12 @@ final class Match: NSObject {
     var date = ""
     var comment: String? = nil
     
+    // MARK: - Private properties
+
     private let storage = Storage()
     
+    // MARK: - Initializers
+
     convenience init(id: Int, hPoints: Int, aPoints: Int, hName: String, aName: String, date: String, comment: String?) throws {
         self.init()
         if hPoints == 0 {

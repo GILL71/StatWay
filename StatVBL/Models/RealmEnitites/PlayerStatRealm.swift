@@ -10,11 +10,12 @@ import RealmSwift
 
 final class PlayerStatRealm: Object {
     
+    // MARK: - Public properties
+    
     @objc dynamic var id = 0
     @objc dynamic var playerId = 0
     @objc dynamic var matchId = 0
-    @objc dynamic var games = 0
-    @objc dynamic var gamesInStart = 0
+    @objc dynamic var isGameInStart = false
     @objc dynamic var defenseRebounds = 0
     @objc dynamic var offenseRebounds = 0
     @objc dynamic var assists = 0
@@ -29,13 +30,14 @@ final class PlayerStatRealm: Object {
     @objc dynamic var freeThrowsMade = 0
     @objc dynamic var fouls = 0
     
+    // MARK: - Initializers
+    
     convenience init(stat: PlayerStat) {
         self.init()
         self.id = stat.id
         self.matchId = stat.matchId
         self.playerId = stat.playerId
-        self.games = stat.games
-        self.gamesInStart = stat.gamesInStart
+        self.isGameInStart = stat.isGameInStart
         self.defenseRebounds = stat.defenseRebounds
         self.offenseRebounds = stat.offenseRebounds
         self.assists = stat.assists

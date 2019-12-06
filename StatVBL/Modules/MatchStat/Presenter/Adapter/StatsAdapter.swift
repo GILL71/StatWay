@@ -30,6 +30,8 @@ final class StatsAdapter: NSObject {
     private let storage: Storage
     private var sections: [Section]
     
+    // MARK: - Initiazlizers
+    
     init(matchId: Int) {
         storage = Storage()
         let stats = storage.getStats(for: matchId)
@@ -168,7 +170,7 @@ extension StatsAdapter: UICollectionViewDataSource {
     
 }
 
-// MARK: -
+// MARK: - BeDirectionalViewLayoutDelegate
 
 extension StatsAdapter: BeDirectionalViewLayoutDelegate {
     

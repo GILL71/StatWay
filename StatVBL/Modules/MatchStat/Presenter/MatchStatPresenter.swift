@@ -16,12 +16,17 @@ protocol MatchStatPresenterDelegate {
 
 final class MatchStatPresenter: MatchStatPresenterDelegate {
     
+    // MARK: - Public properties
+    
     let router: MatchStatRouterDelegate
     let statsAdapter: StatsAdapter
+
+    // MARK: - Public properties
 
     private weak var view: MatchStatViewDelegate!
     private let storage = Storage()
 
+    // MARK: - Initiazlizers
     
     init(view: MatchStatViewDelegate, router: MatchStatRouterDelegate, matchId: Int) {
         self.view = view

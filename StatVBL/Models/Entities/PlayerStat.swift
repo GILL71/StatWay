@@ -8,161 +8,43 @@
 
 import Foundation
 
+// MARK: - Эта сущность предназначена для хранения статистики игрока в конкретном матче, поэтому здесь нет таких полей как
+// games, pointsPerGame, gamesInStart - все это вычисляемые свойства на основе массива [PlayerStat] - отсюда можно судить, на скольких матчах игрок был в заявке, а также об остальных суммарных показателях, или показателях, основанных на этих суммарных показателях (пр. вычисляемое свойство pointsPerGame)
+// pointsPerGame = allPoints([PlayerStat]) / allGames([PlayerStat])
+
 final class PlayerStat: NSObject {
+    
+    // MARK: - Public properties
     
     var id = 0
     var playerId = 0
     var matchId = 0
+    var isGameInStart = false
+    var defenseRebounds = 0
+    var offenseRebounds = 0
+    var assists = 0
+    var steals = 0
+    var blocks = 0
+    var turnovers = 0
+    var twoPointsAttempts = 0
+    var twoPointsMade = 0
+    var threePointsAttempts = 0
+    var threePointsMade = 0
+    var freeThrowsAttempts = 0
+    var freeThrowsMade = 0
+    var fouls = 0
+    
     var points: Int {
         return freeThrowsMade + twoPointsMade * 2 + threePointsMade * 3
-    }
-    var games = 0
-    
-    private let storage = Storage()
-    
-    var pointsPerGame: Double {
-        return (games != 0 ? Double(points / games) : 0)
-    }
-    
-    var gamesInStart = 0
-    
-    var pointsPerGameInStart: Double {
-        return (gamesInStart != 0 ? Double(points / gamesInStart) : 0)
-    }
-    
-    var defenseRebounds = 0
-    
-    var defenseReboundsPerGame: Double {
-        return games != 0 ? Double(defenseRebounds / games) : 0
-    }
-    
-    var defenseReboundsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(defenseRebounds / gamesInStart) : 0
-    }
-    
-    var offenseRebounds = 0
-    
-    var offenseReboundsPerGame: Double {
-        return games != 0 ? Double(offenseRebounds / games) : 0
-    }
-    
-    var offenseReboundsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(offenseRebounds / gamesInStart) : 0
     }
     
     var rebounds: Int {
         return defenseRebounds + offenseRebounds
     }
     
-    var reboundsPerGame: Double {
-        return games != 0 ? Double(rebounds / games) : 0
-    }
+    // MARK: - Private properties
     
-    var reboundsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(rebounds / gamesInStart) : 0
-    }
-    
-    var assists = 0
-    
-    var assistsPerGame: Double {
-        return games != 0 ? Double(assists / games) : 0
-    }
-    
-    var assistsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(assists / gamesInStart) : 0
-    }
-    
-    var steals = 0
-    
-    var stealsPerGame: Double {
-        return games != 0 ? Double(steals / games) : 0
-    }
-    
-    var stealsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(steals / gamesInStart) : 0
-    }
-    
-    var blocks = 0
-    
-    var blocksPerGame: Double {
-        return games != 0 ? Double(blocks / games) : 0
-    }
-    
-    var blocksPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(blocks / gamesInStart) : 0
-    }
-    
-    var turnovers = 0
-    
-    var turnoversPerGame: Double {
-        return games != 0 ? Double(turnovers / games) : 0
-    }
-    
-    var turnoversPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(turnovers / gamesInStart) : 0
-    }
-    
-    var twoPointsAttempts = 0
-    
-    var twoPointsAttemptsPerGame: Double {
-        return games != 0 ? Double(twoPointsAttempts / games) : 0
-    }
-    
-    var twoPointsAttemptsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(twoPointsAttempts / gamesInStart) : 0
-    }
-    
-    var twoPointsMade = 0
-    
-    var twoPointsMadePerGame: Double {
-        return games != 0 ? Double(twoPointsMade / games) : 0
-    }
-    
-    var twoPointsMadePerGameInStart: Double {
-        return gamesInStart != 0 ? Double(twoPointsMade / gamesInStart) : 0
-    }
-    
-    var threePointsAttempts = 0
-    
-    var threePointsAttemptsPerGame: Double {
-        return games != 0 ? Double(threePointsAttempts / games) : 0
-    }
-    
-    var threePointsAttemptsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(threePointsAttempts / gamesInStart) : 0
-    }
-    
-    var threePointsMade = 0
-    
-    var threePointsMadePerGame: Double {
-        return games != 0 ? Double(threePointsMade / games) : 0
-    }
-    
-    var threePointsMadePerGameInStart: Double {
-        return gamesInStart != 0 ? Double(threePointsMade / gamesInStart) : 0
-    }
-    
-    var freeThrowsAttempts = 0
-    
-    var freeThrowsAttemptsPerGame: Double {
-        return games != 0 ? Double(freeThrowsAttempts / games) : 0
-    }
-    
-    var freeThrowsAttemptsPerGameInStart: Double {
-        return gamesInStart != 0 ? Double(freeThrowsAttempts / gamesInStart) : 0
-    }
-    
-    var freeThrowsMade = 0
-    
-    var freeThrowsMadePerGame: Double {
-        return games != 0 ? Double(freeThrowsMade / games) : 0
-    }
-    
-    var freeThrowsMadePerGameInStart: Double {
-        return gamesInStart != 0 ? Double(freeThrowsMade / gamesInStart) : 0
-    }
-    
-    var fouls = 0
+    private let storage = Storage()
     
     // MARK: - Initializers
     
@@ -176,8 +58,7 @@ final class PlayerStat: NSObject {
         self.id = playerStat.id
         self.matchId = playerStat.matchId
         self.playerId = playerStat.playerId
-        self.games = playerStat.games
-        self.gamesInStart = playerStat.gamesInStart
+        self.isGameInStart = playerStat.isGameInStart
         self.defenseRebounds = playerStat.defenseRebounds
         self.offenseRebounds = playerStat.offenseRebounds
         self.assists = playerStat.assists
@@ -191,7 +72,6 @@ final class PlayerStat: NSObject {
         self.freeThrowsAttempts = playerStat.freeThrowsAttempts
         self.freeThrowsMade = playerStat.freeThrowsMade
         self.fouls = playerStat.fouls
-        
     }
     
     func printShortStat() {
@@ -206,7 +86,6 @@ final class PlayerStat: NSObject {
         Блоки - \(blocks)
         Потери - \(turnovers)
         """
-//        print(playerName ?? "" + ":" + str)
         print(str)
     }
     

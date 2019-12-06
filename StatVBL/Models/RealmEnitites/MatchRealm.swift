@@ -10,6 +10,8 @@ import RealmSwift
 
 final class MatchRealm: Object {
     
+    // MARK: - Public properties
+    
     @objc dynamic var id = 0
     @objc dynamic var homeTeamPoints = 0
     @objc dynamic var awayTeamPoints = 0
@@ -18,6 +20,8 @@ final class MatchRealm: Object {
     @objc dynamic var date = ""
     @objc dynamic var comment: String? = nil
     
+    // MARK: - Initializers
+
     convenience init(match: Match) {
         self.init()
         self.id = match.id
